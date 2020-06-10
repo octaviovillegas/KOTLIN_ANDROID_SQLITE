@@ -1,0 +1,2 @@
+rootProject.name='SqLite2020ConLogin'
+include ':app'
