@@ -913,6 +913,7 @@ layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_alta_usuario
+layout activity_alta_ususario_poo
 layout activity_editar_usuario
 layout activity_listado_usuarios
 layout activity_login_usuario

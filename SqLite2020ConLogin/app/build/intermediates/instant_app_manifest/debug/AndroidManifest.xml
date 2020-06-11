@@ -20,6 +20,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.sqlite2020conlogin.Alta_ususario_poo" />
         <activity android:name="com.example.sqlite2020conlogin.Editar_usuario" />
         <activity android:name="com.example.sqlite2020conlogin.Listado_usuarios" />
         <activity android:name="com.example.sqlite2020conlogin.Login_usuario" />

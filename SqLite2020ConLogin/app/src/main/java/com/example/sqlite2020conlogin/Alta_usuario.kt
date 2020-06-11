@@ -51,6 +51,9 @@ class Alta_usuario : AppCompatActivity() {
 
 
 
+
+
+
     override fun onStart() {
         super.onStart()
         this.listarUsuarios()
@@ -69,7 +72,7 @@ class Alta_usuario : AppCompatActivity() {
                 Toast.makeText(this, "No existe usuarios para borrar", Toast.LENGTH_SHORT).show()
             }
             bd.close()
-        }catch (e: IOException){
+        }catch (e: Throwable){
             Toast.makeText(this, "Error al borrar "+ e.message, Toast.LENGTH_SHORT).show()
         }
 
@@ -89,8 +92,8 @@ class Alta_usuario : AppCompatActivity() {
                     Toast.makeText(this, "No existe un usuario con dicho ID", Toast.LENGTH_SHORT).show()
                 }
                 bd.close()
-            }catch (e: IOException){
-                Toast.makeText(this, "Error al borrar "+ e.message, Toast.LENGTH_SHORT).show()
+            }catch (e: Throwable){
+                Toast.makeText(this, "Error al borrar  $e.message", Toast.LENGTH_SHORT).show()
             }
         }else{
             Toast.makeText(this, "Se debe pasar un ID ", Toast.LENGTH_SHORT).show()
@@ -99,12 +102,17 @@ class Alta_usuario : AppCompatActivity() {
 
     private fun altaDeUsuario(): Long {
         var retorno:Long= 0L
-        Toast.makeText(this, "btnAltaUsuario", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this, "btnAltaUsuario", Toast.LENGTH_SHORT).show()
         if(this.txtNombre.getText().isNotEmpty()&&this.txtClave.getText().isNotEmpty() )
         {
 
             var nombre=this.txtNombre.getText().toString()
             var clave=this.txtClave.getText().toString()
+            val miUsuario=  usuario(nombre,clave)
+            retorno=miUsuario.GuardarEnSqLite(this)
+
+
+            /*
             try {
                 val admin = Admin_baseDeDatos(this,"SqLite2020", null, 2)
                 val bd = admin.writableDatabase
@@ -119,6 +127,8 @@ class Alta_usuario : AppCompatActivity() {
             {
                 Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
             }
+
+             */
         }else
         {
             Toast.makeText(this, "Los campos no deben estar vacios", Toast.LENGTH_SHORT).show()
@@ -131,6 +141,9 @@ class Alta_usuario : AppCompatActivity() {
     private fun listarUsuarios()
     {
         this.txtListar.setText("")
+        val listado=usuario.retornarArrayUsuarios(this)
+        this.txtListar.append(listado.toString())
+/*
         try {
             val admin = Admin_baseDeDatos(this, "SqLite2020", null, 2)
             val bd = admin.writableDatabase
@@ -148,9 +161,13 @@ class Alta_usuario : AppCompatActivity() {
             bd.close()
         }catch (e:Throwable)
         {
-            Toast.makeText(this, "No hay artículo ${e.message}",  Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "No hay Usuarios ${e.message}",  Toast.LENGTH_SHORT).show()
             this.txtListar.append(e.message)
         }
+
+ */
+
+
 
     }
 

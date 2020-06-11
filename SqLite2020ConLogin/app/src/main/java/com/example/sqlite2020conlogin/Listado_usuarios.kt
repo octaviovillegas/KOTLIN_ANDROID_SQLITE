@@ -16,7 +16,7 @@ class Listado_usuarios : AppCompatActivity() {
         lsvListado.setOnItemClickListener{ parent, view, position, id ->
 
             val texto=parent.getItemAtPosition(position) as String
-            val datos=texto.split(",")
+            val datos=texto.split(",")//22,miNombre,miClave
             val id=datos[0]//datos[0]=id datos[1]=nobre datos[2]=clave
             Toast.makeText(this, "Selecciono :$id", Toast.LENGTH_SHORT).show()
              val intento1 = Intent(this,Editar_usuario::class.java)

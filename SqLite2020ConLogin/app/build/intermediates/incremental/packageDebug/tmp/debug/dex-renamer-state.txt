@@ -1,7 +1,7 @@
-#Wed Jun 10 10:18:40 ART 2020
-base.0=D\:\\SqLite2020ConLogin\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Wed Jun 10 20:52:44 ART 2020
+base.0=D\:\\KOTLIN_ANDROID_SQLITE\\SqLite2020ConLogin\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=D\:\\SqLite2020ConLogin\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=D\:\\KOTLIN_ANDROID_SQLITE\\SqLite2020ConLogin\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
